@@ -1,0 +1,135 @@
+body {
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(252, 252, 252, 0.899597)), color-stop(0%, rgba(19, 32, 64, 0.496236)), color-stop(92%, rgba(19, 32, 64, 0.888393)));
+  background: linear-gradient(0deg, rgba(252, 252, 252, 0.899597) 0%, rgba(19, 32, 64, 0.496236) 0%, rgba(19, 32, 64, 0.888393) 92%);
+}
+
+.mainHead {
+  color: white;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.graphDiv {
+  margin-top: 3em;
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.stocksToChooseBox {
+  width: 30em;
+  height: 15em;
+  margin: 1em auto 0 auto;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 10px;
+}
+
+.logoImg {
+  position: relative;
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 5em;
+  height: 2.25em;
+  border-radius: 5px;
+}
+
+.switchDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.switchDiv .stockSymbol {
+  position: relative;
+  bottom: 0.5em;
+}
+
+.navLinkMain {
+  position: relative;
+  left: 2em;
+  width: 15em;
+}
+
+.singleStockButtons {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.singleStockButtons .parameterP {
+  position: relative;
+  right: 1.1em;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+.vueLogo {
+  position: relative;
+  top: 0.25em;
+  height: 1.25em;
+}
+
+.switchDiv a {
+  margin-top: 0.5em;
+  text-align: center;
+  outline: none;
+  color: #132040;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.switchDiv a:hover,
+.switchDiv a:focus {
+  outline: none;
+  color: #27CFC3;
+}
+
+.switchDiv a::before,
+.switchDiv a::after {
+  display: inline-block;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s, -webkit-transform 0.3s;
+  transition: opacity 0.2s, -webkit-transform 0.3s;
+  transition: transform 0.3s, opacity 0.2s;
+  transition: transform 0.3s, opacity 0.2s, -webkit-transform 0.3s;
+}
+
+.switchDiv a::before {
+  margin-right: 5px;
+  content: '[';
+  -webkit-transform: translateX(15px);
+          transform: translateX(15px);
+}
+
+.switchDiv a::after {
+  margin-left: 5px;
+  content: ']';
+  -webkit-transform: translateX(-15px);
+          transform: translateX(-15px);
+}
+
+.switchDiv a:hover::before,
+.switchDiv a:hover::after,
+.switchDiv a:focus::before,
+.switchDiv a:focus::after {
+  color: #27CFC3;
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+}
+/*# sourceMappingURL=main.css.map */

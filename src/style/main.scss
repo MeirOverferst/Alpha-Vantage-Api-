@@ -1,0 +1,112 @@
+body{
+background: linear-gradient(0deg, rgba(252,252,252,0.8995973389355743) 0%, rgba(19,32,64,0.4962359943977591) 0%, rgba(19,32,64,0.8883928571428571) 92%);
+}
+.mainHead{
+    width:100%;
+    color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.graphDiv{
+   margin-top: 3em;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+
+}
+.stocksToChooseBox{
+    width: 30em;
+    height: 15em;
+    margin: 1em auto 0 auto;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+   border-radius: 10px;
+}
+.logoImg{
+    position: relative;
+    object-fit: contain;
+    width: 5em;
+    height: 2.25em;
+    border-radius: 5px;
+
+}
+
+.switchDiv{
+    display: flex;
+    justify-content: space-between;
+    .stockSymbol{
+    position: relative;
+    bottom: 0.5em;
+}
+   
+}
+.navLinkMain{
+    position: relative;
+    left: 2em;
+    width: 15em;
+
+}
+
+ 
+
+.singleStockButtons{
+justify-content: center;
+.parameterP{
+    position: relative;
+    right: 1.1em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+}
+.vueLogo{
+    position: relative;
+    top: 0.25em;
+    height: 1.25em;
+}
+
+
+.switchDiv a {
+    margin-top: 0.5em;
+    text-align: center;
+	outline: none;
+	color: #132040;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.switchDiv a:hover,
+.switchDiv a:focus {
+    outline: none;
+    color: #27CFC3;
+}
+
+.switchDiv a::before,
+.switchDiv a::after {
+	display: inline-block;
+	opacity: 0;
+	transition: transform 0.3s, opacity 0.2s;
+}
+
+.switchDiv a::before {
+	margin-right: 5px;
+	content: '[';
+	transform: translateX(15px);
+}
+
+.switchDiv a::after {
+	margin-left: 5px;
+	content: ']';
+	transform: translateX(-15px);
+}
+
+.switchDiv a:hover::before,
+.switchDiv a:hover::after,
+.switchDiv a:focus::before,
+.switchDiv a:focus::after {
+    color: #27CFC3;
+	opacity: 1;
+	transform: translateX(0px);
+}
