@@ -29,7 +29,7 @@ const options = {
   datasetStroke: true,
   datasetStrokeWidth: 2,
   datasetFill: true,
-  legendTemplate: '<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>',
+  legendTemplate: '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<datasets.length; i++){%><li><span style="background-color:<%=datasets[i].strokeColor%>"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>',
 }
 const styles = {
   root: {
@@ -62,7 +62,7 @@ class Main extends Component {
       if (stock) {
         nytStockDates = Object.keys(stock[weeklyTimeSeries]);
         for( let i = 0; i < nytStockDates.length; i++){ 
-          if ( i% 2 ==0) {
+          if ( i% 2 ===0) {
             nytStockDates.splice(i, 40); 
           }
        }
@@ -84,26 +84,25 @@ class Main extends Component {
   const index = stocksArr.findIndex(st=>st[metadata][symbol] === stockSymbol);
   let stockToPlot;
   let stockPlotSeries =[ ]; 
-  for( let i = 0; i < stockPlotSeries.length; i++){ 
-    if ( i% 2 ==0) {
-      stockPlotSeries.splice(i, 0); 
-    }
- }
+  let parameterValue =[ ];
     if (index !== -1) {
       stockToPlot = stocksArr[index];
       let seriesKeys = Object.keys(stockToPlot[weeklyTimeSeries]); 
-      seriesKeys.forEach((key)=>{
-       let parameterValue = stockToPlot[weeklyTimeSeries][key][parameter];
-       stockPlotSeries.push(parameterValue);
-      });
-
-     
+      seriesKeys.forEach((key)=>{        
+        parameterValue.push(stockToPlot[weeklyTimeSeries][key][parameter]);
+      })
+      for( let i = 0; i < parameterValue.length; i++){ 
+        if ( i % 2 ===0) {  
+          parameterValue.splice(i, 40); 
+        }
+        stockPlotSeries=parameterValue;
+     }   
  } 
-  else {
-      console.log("couldnt find stock ", stockSymbol)
-    }
     return stockPlotSeries;
   }
+
+
+
   getStockDataSet(stockSymbol) {   
     switch (stockSymbol) {
       case "NTDOY":
