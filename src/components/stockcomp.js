@@ -46,8 +46,8 @@ class Comp extends Component {
        dataSeriesArr.push(newChartEntry);
      });
      return (
-      <div>
-       <div className="big">
+      <div className="big" >
+       <div >
        <h1 className="pageTitel" >Symbol: {stockName}</h1>
          <div className="bigSingleGraph" >
          <VictoryChart width={850} height={550} scale={{x: "time"}}

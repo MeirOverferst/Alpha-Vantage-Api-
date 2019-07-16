@@ -1,6 +1,10 @@
 body {
-  background: -webkit-gradient(linear, left bottom, left top, from(rgba(252, 252, 252, 0.899597)), color-stop(0%, rgba(19, 32, 64, 0.496236)), color-stop(92%, rgba(19, 32, 64, 0.888393)));
-  background: linear-gradient(0deg, rgba(252, 252, 252, 0.899597) 0%, rgba(19, 32, 64, 0.496236) 0%, rgba(19, 32, 64, 0.888393) 92%);
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(252, 252, 252, 0.959)), color-stop(0%, rgba(28, 41, 71, 0.496)), color-stop(92%, rgba(19, 32, 64, 0.888393)));
+  background: linear-gradient(0deg, rgba(252, 252, 252, 0.959) 0%, rgba(28, 41, 71, 0.496) 0%, rgba(19, 32, 64, 0.888393) 92%);
+}
+
+.mainDiv {
+  height: 89.75vh;
 }
 
 .mainHead {
@@ -10,7 +14,6 @@ body {
 }
 
 .graphDiv {
-  margin-top: 3em;
   height: 500px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -23,7 +26,7 @@ body {
 .stocksToChooseBox {
   width: 30em;
   height: 15em;
-  margin: 1em auto 0 auto;
+  margin: 0 auto 0 auto;
   background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
