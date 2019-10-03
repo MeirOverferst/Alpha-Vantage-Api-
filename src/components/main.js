@@ -47,7 +47,7 @@ class Main extends Component {
     super(props);
     this.state = {
      currentStockParameter: "4. close",
-     presentedStocks: ['NYT', 'ADB', 'NTDOY', 'NFLX', 'FB']
+     presentedStocks: ['NYT', 'NTDOY', 'NFLX', 'FB']
     };
   }
   componentDidMount(stocksArr) {
@@ -127,17 +127,6 @@ class Main extends Component {
           pointHighlightStroke: 'rgba(220,220,220,1)',
           data: this.getStockPlotSeries(stockSymbol),
         }) 
-      case "ADB": 
-      return ({
-        label: 'adobe',
-        fillColor: 'rgba(179, 255, 179,0.2)',
-        strokeColor: '	 #00b300',
-        pointColor: 'rgba(179, 255, 179,0.75)',
-        pointStrokeColor: '#fff',
-        pointHighlightFill: '#fff',
-        pointHighlightStroke: 'rgba(151,187,205,1)',
-        data: this.getStockPlotSeries(stockSymbol),
-      })
       case "FB": 
       return ({
         label: 'facebook',
@@ -208,13 +197,6 @@ class Main extends Component {
           <p className="stockSymbol">Symbol: NTDOY</p>
           <NavLink className="navLinkMain " to={`stock/NTDOY`} >
           nintendo
-          </NavLink>
-          </div>
-          <div className="switchDiv">  
-          <Switch style={styles.root} type="checkbox" value="ADB" checked={this.state.presentedStocks.includes("ADB")}/>
-          <p className="stockSymbol">Symbol: ADB</p>
-          <NavLink   className="navLinkMain" to={`stock/ADB`}>
-          adobe
           </NavLink>
           </div>
           <div className="switchDiv">
