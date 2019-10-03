@@ -3,10 +3,8 @@ import {createStore,applyMiddleware} from 'redux';
   import axios from "axios";
   import {composeWithDevTools} from 'redux-devtools-extension';
   import _ from 'lodash';
-
-  let key="0SEXJNFQF9UIATDG";
-  
-  let fiveStocks=["NTDOY","ADB","NFLX","FB","NYT"];
+  let key="FYIKAC4JIOX2S1M5";
+  let fiveStocks=["NYT","NTDOY","NFLX","FB"];
   const initialState = {
     pending: false,
     stocks: [ ],
@@ -20,7 +18,7 @@ import {createStore,applyMiddleware} from 'redux';
         return updatedState;
         case "FETCH_SUCCESS":
         updatedState.pending = state.pending = false;
-        if(updatedState.stocks.length<5){
+        if(updatedState.stocks.length<4){
           updatedState.stocks.push(action.payload);
         }
         console.log("updatedState.stocks",updatedState.stocks);
@@ -41,7 +39,7 @@ import {createStore,applyMiddleware} from 'redux';
   export function fetchingFiveStocks() {
     return (dispatch) => {
       dispatch(fetchingPending());
-      for (let i = 0; i<fiveStocks.length; i++){
+      for (let i = 0; i<fiveStocks.length; i++){            
         axios.get('https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY&symbol='+fiveStocks[i]+'&apikey='+{key})
         .then((response) => {
           dispatch({
@@ -50,14 +48,17 @@ import {createStore,applyMiddleware} from 'redux';
           });
         })
         .catch((err) => {
+          
           dispatch({
             type: "FETCH_ERROR",
-            payload: err
+            payload: err,
+        
           })
+        
         })
       }
-
     }
   }
 
   export const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
+
