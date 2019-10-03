@@ -9,7 +9,7 @@ function App() {
       <BrowserRouter>
        <div className="App">
         <NavLink to="/">
-        <h1 className="mainHead"> 5 Top Companies That Have Trusted <img  className="vueLogo"src={img5}/></h1>
+        <h1 className="mainHead"> 4 Top Companies That Have Trusted <img  className="vueLogo"src={img5}/></h1>
         </NavLink>
           <Route path="/" exact component={MainContainer}/>
           <Route path='/stock/:id' component={CompContainer} />
